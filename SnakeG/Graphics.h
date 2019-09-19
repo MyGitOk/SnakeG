@@ -13,7 +13,7 @@ sf::Vector2f ShapePozition;
 
 float step = 6; // шаг движения
 float checkStep = 0; // для проверки шага
-float speed = 0.05; // скорость движения
+float speed = 0.03; // скорость движения
 
 class Obj
 {

@@ -2,11 +2,11 @@
 #include<conio.h>
 #include"Graphics.h"
 using namespace std;
-enum Direction
-{
-	STOP,
-	LEFT = 75, RIGHT = 77, UP = 72, DOWN = 80, TWO = 50, FOUR = 52, SIX = 54, EIGHT = 56
-};
+//enum Direction
+//{
+//	STOP,
+//	LEFT = 75, RIGHT = 77, UP = 72, DOWN = 80, TWO = 50, FOUR = 52, SIX = 54, EIGHT = 56
+//};
 //Direction dir;
 
 //class Input

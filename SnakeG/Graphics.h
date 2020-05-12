@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML\Graphics.hpp>
-unsigned int wWidth = 400;
-unsigned int wHight = 400;
+unsigned int wWidth = 200;
+unsigned int wHight = 200;
 
 sf::RenderWindow window(sf::VideoMode(wWidth, wHight), "SFMLworks");
 sf::Event event;

@@ -18,10 +18,6 @@ int main()
 	FoodPozition.x = 100.f;
 	FoodPozition.y = 20.f;
 
-	enum Direction
-	{
-		dUP, dDOWN, dRIGHT, dLEFT
-	};
 	Direction dir = dRIGHT;
 
 	while (window.isOpen())
@@ -32,30 +28,7 @@ int main()
 			if (event.type == sf::Event::Closed)
 				window.close();
 			else if (event.type == sf::Event::KeyPressed)
-			{
 				Sn.SnakeUpdate(event.key.code);
-				if (event.key.code == sf::Keyboard::Up)
-				{
-					ShapePozition.y -= step * 30; // надо что бы здесь менялось направление
-					dir = dUP;
-				}
-				else if (event.key.code == sf::Keyboard::Down)
-				{
-					ShapePozition.y += step * 30;
-					dir = dDOWN;
-				}
-				else if (event.key.code == sf::Keyboard::Right)
-				{
-					ShapePozition.x += step * 30;
-					dir = dRIGHT;
-				}
-				else if (event.key.code == sf::Keyboard::Left)
-				{
-					ShapePozition.x -= step * 30;
-					dir = dLEFT;
-				}
-			}
-
 		}
 
 		// направление + проход через края поля

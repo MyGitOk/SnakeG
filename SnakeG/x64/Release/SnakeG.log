@@ -1,18 +1,18 @@
 ﻿  Source.cpp
-d:\study\itstep\oop\homework\snakeg\snakeg\source.cpp(11): warning C4305: инициализация: усечение из "double" в "float"
-d:\study\itstep\oop\homework\snakeg\snakeg\source.cpp(55): warning C4244: =: преобразование "unsigned int" в "T", возможна потеря данных
+c:\storage\study\itstep\c++\snake\snakeg\snakeg\source.cpp(14): warning C4305: 'initializing': truncation from 'double' to 'float'
+c:\storage\study\itstep\c++\snake\snakeg\snakeg\source.cpp(66): warning C4244: '=': conversion from 'unsigned int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-d:\study\itstep\oop\homework\snakeg\snakeg\source.cpp(71): warning C4244: =: преобразование "unsigned int" в "T", возможна потеря данных
+c:\storage\study\itstep\c++\snake\snakeg\snakeg\source.cpp(82): warning C4244: '=': conversion from 'unsigned int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-  Создание кода
-  6 of 10 functions (60.0%) were compiled, the rest were copied from previous compilation.
+  Generating code
+  2 of 100 functions ( 2.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    0 functions had inline decision re-evaluated but remain unchanged
-  Создание кода завершено
-  SnakeG.vcxproj -> D:\Study\itStep\OOP\HomeWork\SnakeG\x64\Release\SnakeG.exe
+    1 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  SnakeG.vcxproj -> C:\Storage\Study\itStep\C++\Snake\SnakeG\x64\Release\SnakeG.exe

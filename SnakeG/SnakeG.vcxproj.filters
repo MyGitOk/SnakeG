@@ -26,5 +26,11 @@
     <ClInclude Include="Input.h">
       <Filter>Исходные файлы</Filter>
     </ClInclude>
+    <ClInclude Include="GameLogic.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

@@ -1,14 +1,22 @@
 #include<iostream>
 #include"Graphics.h"
 #include"Input.h"
+#include"GameLogic.h"
 
 
 int main()
 {
+	Snake Sn;
+	
 	shape.setFillColor(sf::Color::Green);
 	ShapePozition.x = 20.f;
 	ShapePozition.y = 20.f;
 	float step = 0.05;
+
+	/////////
+	food.setFillColor(sf::Color::Yellow);
+	FoodPozition.x = 100.f;
+	FoodPozition.y = 20.f;
 
 	enum Direction
 	{
@@ -25,6 +33,7 @@ int main()
 				window.close();
 			else if (event.type == sf::Event::KeyPressed)
 			{
+				Sn.SnakeUpdate(event.key.code);
 				if (event.key.code == sf::Keyboard::Up)
 				{
 					ShapePozition.y -= step * 30; // надо что бы здесь менялось направление
@@ -46,7 +55,9 @@ int main()
 					dir = dLEFT;
 				}
 			}
+
 		}
+
 		// направление + проход через края поля
 		if (dir == dUP)
 		{
@@ -84,10 +95,14 @@ int main()
 
 		//shape.move(ShapePozition);
 		shape.setPosition(ShapePozition);
+		food.setPosition(FoodPozition);
+
 
 		// отрисовка
 		window.clear();
+		Sn.SnakeDraw();
 		window.draw(shape);
+		window.draw(food);
 		window.display();
 		
 

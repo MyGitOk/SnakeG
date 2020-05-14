@@ -2,6 +2,7 @@
 #include"Graphics.h"
 #include"Input.h"
 #include"GameLogic.h"
+#include<Windows.h>
 
 
 int main()
@@ -10,8 +11,8 @@ int main()
 	speed = 200; // game refresh rate in milliseconds
 
 	food.setFillColor(sf::Color::Yellow);
-	FoodPozition.x = 99.f;
-	FoodPozition.y = 21.f;
+	FoodPozition.x = cell * 8;
+	FoodPozition.y = cell * 2;
 	food.setPosition(FoodPozition);
 
 	int counterSteps = 0;
@@ -28,7 +29,7 @@ int main()
 		}
 
 		Sn.SnakeMove();
-		
+		counterSteps++;
 
 		// отрисовка
 		window.clear();
@@ -36,7 +37,15 @@ int main()
 		window.draw(food);
 		window.display();
 
-		counterSteps++;
+		if (!snakeAlive)
+		{
+			MessageBoxA(0, "Game Over", "Snake_Game", MB_OK);
+			sf::sleep(sf::seconds(3));
+			window.close();
+		}
+
+
+		cout << "Food: " << FoodPozition.x << " X " << FoodPozition.y << " Y\n";
 		cout << counterSteps << " - steps from start game\n";
 
 

@@ -7,18 +7,14 @@
 int main()
 {
 	Snake Sn;
-	
-	shape.setFillColor(sf::Color::Green);
-	ShapePozition.x = 20.f;
-	ShapePozition.y = 20.f;
-	float step = 0.05;
+	speed = 200; // game refresh rate in milliseconds
 
-	/////////
 	food.setFillColor(sf::Color::Yellow);
-	FoodPozition.x = 100.f;
-	FoodPozition.y = 20.f;
+	FoodPozition.x = 99.f;
+	FoodPozition.y = 21.f;
+	food.setPosition(FoodPozition);
 
-	Direction dir = dRIGHT;
+	int counterSteps = 0;
 
 	while (window.isOpen())
 	{
@@ -31,54 +27,20 @@ int main()
 				Sn.SnakeUpdate(event.key.code);
 		}
 
-		// направление + проход через края поля
-		if (dir == dUP)
-		{
-			if (ShapePozition.y <= 0)
-			{
-				ShapePozition.y = wHight;
-			}
-			ShapePozition.y -= step;
-		}
-		else if (dir == dDOWN)
-		{
-			if (ShapePozition.y >= wHight)
-			{
-				ShapePozition.y = 0;
-			}
-			ShapePozition.y += step;
-		}
-		else if (dir == dLEFT)
-		{
-			if (ShapePozition.x <= 0)
-			{
-				ShapePozition.x = wWidth;
-			}
-			ShapePozition.x -= step;
-		}
-		else if (dir == dRIGHT)
-		{
-			if (ShapePozition.x >= wWidth)
-			{
-				ShapePozition.x = 0;
-			}
-			ShapePozition.x += step;
-		}
-
-
-		//shape.move(ShapePozition);
-		shape.setPosition(ShapePozition);
-		food.setPosition(FoodPozition);
-
+		Sn.SnakeMove();
+		
 
 		// отрисовка
 		window.clear();
 		Sn.SnakeDraw();
-		window.draw(shape);
 		window.draw(food);
 		window.display();
-		
 
+		counterSteps++;
+		cout << counterSteps << " - steps from start game\n";
+
+
+		sf::sleep(sf::milliseconds(speed));
 	}
 	return 0;
 }
